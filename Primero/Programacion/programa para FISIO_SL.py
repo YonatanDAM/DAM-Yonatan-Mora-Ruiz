@@ -1,72 +1,96 @@
-#creamos el docstring como mensaje de bienvenida para el desarrollador
-"""
-PROGRAMA DE GESTION DE CLIENTES PARA FISIO S.L HECHO POR:
-(c) YONATAN MORA RUIZ 2024
-"""
-
-import os#creamos la funcion de limpiar la pantalla de nuestro programa
+'''PROGRAMA CRUD COMPLETO
+POR YONATAN MORA RUIZ (C)
+CRUD = 
+C = CREATE / CREAR
+R = READ / LEER
+U = UPDATE / ACTUALIZAR
+D = DELETE / BORRAR
+'''
+import os
+import mysql.connector
 def limpiar_pantalla():
-    if os.name == "nt":#nt significa que limpiara la pantalla de cualquier os
-        os.system("cls")#(windos,mac,linux)
-    else:#hacemos un (if-else) para que no se repita el mismo mensaje a la hora de iniciar el programa
-        os.system(limpiar_pantalla)
-        limpiar_pantalla()#llamamos a la funcion de limpiar pantalla
+    if os.name == "nt":  # nt significa que limpiará la pantalla en Windows
+        os.system("cls")
+    else:  # Otros sistemas operativos
+        os.system("clear")
 
+servidor = "localhost"
+usuario = "mi_empresa"
+contraseña = "miempresa"
+bases_de_datos = "libreria"
 
-
-import os#creamos la caperta donde va estar el documento txt.
-try:
-    nombre_carpeta = "FISIO_SL"#nueva carpeta
-    os.mkdir("FISIO_S.L")#make-directoy para hacer la carpeta
-except:
-    print("tu carpeta ya esta creada , continuamos con el programa")
-    limpiar_pantalla()#llamamos ala funcion de limpiar pantalla
-# Almacenamiento en el DISCO DURO al ser un archivo de texto
-archivo = open("FISIO_S.L/clientes.txt","a")#creamos el archivo txt dentro de la carpeta en "a" añadir
-while(True):#creamos un bucle infinito de repeticion
-    print("\033[36m**********BIENVENIDO FISIO.SL**********\n")#mensaje de bienvenida para el usuario
-    print("seleciona una de las siguientes opciones que acontinuacion te presentamos:")#menu de navegacion para el usuario
-    print("\033[32m•1- Introduce los datos personales del paciente: ")#opcion 1
-    print("•2- leer registros guardados: ")#opcion 2
-    print("•3- SALIR del programa: ")#opcion 3
-#el \033[35m] es el color de la fuente en la consola siendo en este caso AZUL
-    opcion = input ("seleciona una de las opciones del menu: ")
-    #con opcion = input le informamos al usuario que introduzca una opcion del menu
-    print("has seleciona la opcion:",opcion,"continuemos..")#mensaje de respuesta del programa
-#estructura de control (if-elif-self)
-    if opcion == "1":# si opcion 1 es igual a 1 entonces...
-        print("\033[36mVamos a introducir los datos del paciente:")#mensaje de respuesta del programa
-        archivo     = open("FISIO_S.L/clientes.txt","a")#llamamos al archivo de txt.
-        nombre      = input("\033[35mnombre del paciente: nombre ->\033[0m ")#introduce datos
-        apellidos   = input("\033[35mapellidos del paciente: apellidos ->\033[0m ")#introduce datos
-        telefono    = input("\033[35mtelefono del paciente: telefono ->\033[0m ")#introduce datos
-        email       = input("\033[35memail del paciente: email ->\033[0m ")#introduce datos
-        tratamiento = input("\033[35mtratamiento al paciente: tratamiento ->\033[0m ")#introduce datos
-        nota        = input("\033[35mnota al paciente: NOTA ->\033[0m ")#introduce datos
-        #concatenamos los datos introducidos por el usuario en la variable llamada -contenido-
-        contenido   = nombre+"\n"+apellidos+"\n"+telefono+"\n"+email+"\n"+tratamiento+"\n"+nota
-        archivo.write(contenido)#ejecutamos archivo.write para que escriba el contenido de la variable - contenido-
-        archivo.close()#SIEMPRE cerramos el archivo con archivo.close() y llamamos al funcion
-        print("\033[32m*****Los datos del paciente se ha guardardo correctamente.*****")#mensaje de respuesta de que los datos introducidos se han guadado correctamente
-
-    elif opcion == "2":#estructura de control (si el usuario elige la opcion 2)
-        print("\033[33mVamos a LEER los registros guardados.")
-        archivo     = open("FISIO_S.L/clientes.txt","r")#abrimos el archivo en modo lectura "r"
-        lineas      = archivo.readlines()#creamos la variable lineas para leer las redlines en funcion()
-        for linea in lineas:#estructura de control for
-            print(linea)
+conexion = mysql.connector.connect(
+    host=servidor,
+    database=bases_de_datos,
+    user=usuario,
+    password=contraseña
+)
+limpiar_pantalla()
+while True:
+    print("\033[36mBIENVENIDO A TU PROGRAMA DE LIBRERIA ENLAZADA CON BASE DE DATOS EN PHPMYADMIN\n")
+    print("       --MENU PRINCIPAL DE LA LIBRERIA--")
+    print("\033[32m•1 Crea un nuevo registro para el libro.")
+    print("•2 Vamos a leer los registros almacenados.")
+    print("•3 Vamos a actualizar los datos de un libro.")
+    print("•4 Vamos a borrar un registro de un libro.")
+    print("•5 Salir del programa.")
+    opcion = input("Selecciona una de las anteriores opciones del menú: ")
+    print("\033[35mHas seleccionado la opción", opcion, "del menú.\033[0m")
+    
+    if opcion == "1":
+        print("\033[36mVamos a CREAR un nuevo registro de libro.")
+        autor = input("\033[35mIntroduce el autor del libro: \033[0m")
+        titulo = input("\033[35mIntroduce el título del libro: \033[0m")
+        año = input("\033[35mIntroduce el año de lanzamiento del libro: \033[0m")
+        genero = input("\033[35mIntroduce el género del libro: \033[0m")
+        # Código de conexión a PHPMYADMIN
+        peticion = f"INSERT INTO `datos_del _libro` (autor, titulo, año, genero) VALUES ('{autor}', '{titulo}', '{año}', '{genero}');"
+        cursor = conexion.cursor()
+        cursor.execute(peticion)
+        conexion.commit()
+        print("\033[32mNuevo libro insertado exitosamente.\033[0m")
         
-        input("pulse una tecla para continuar")#mensaje del programa para el usuario
-        limpiar_pantalla()#llamamos a la funcion de limpiar la pantalla para el usuario
-
-
-    elif opcion == "3":#estructura de control
-        limpiar_pantalla()#funcion de limpiar la pantalla
-        input("pulse una tecla para continuar")#mensaje del programa para el usuario
+    elif opcion == "2":
+        print("\033[36mVamos a LEER los registros almacenados en la base de datos.\033[0m")
+        peticion = "SELECT * FROM `datos_del _libro`;"
+        cursor = conexion.cursor()
+        cursor.execute(peticion)
+        filas = cursor.fetchall()
+        for fila in filas:
+            print("------------------------------------")
+            print("El identificador es:", fila[0])
+            print("El AUTOR del libro es:", fila[1])
+            print("El TÍTULO del libro es:", fila[2])
+            print("El AÑO de lanzamiento es:", fila[3])
+            print("El GÉNERO del libro es:", fila[4])
+        print("Listado de libros visualizado correctamente.")
         
-    else:#estructura de control
-        print("\033[35mla opcion elegida no es la correcta, prueba de nuevo.")
-    #con esta estrutura de control en caso de que el usuario introduzca una funcion no valida
-    #     
+    elif opcion == "3":
+        print("\033[36mVamos a ACTUALIZAR los datos de un libro en la base de datos.\033[0m")
+        identificador = input("Introduce el ID del libro a actualizar: ")
+        nuevo_autor = input("Introduce el nuevo autor del libro: ")
+        nuevo_titulo = input("Introduce el nuevo título del libro: ")
+        nuevo_año = input("Introduce el nuevo año de lanzamiento del libro: ")
+        nuevo_genero = input("Introduce el nuevo género del libro: ")
+        peticion = f"UPDATE `datos_del _libro` SET autor='{nuevo_autor}', titulo='{nuevo_titulo}', año='{nuevo_año}', genero='{nuevo_genero}' WHERE identificador={identificador};"
+        cursor = conexion.cursor()
+        cursor.execute(peticion)
+        conexion.commit()
+        print("Libro actualizado exitosamente.")
+        
+    elif opcion == "4":
+        print("\033[31mVamos a BORRAR los registros almacenados en la base de datos.\033[0m")
+        identificador = input("Introduce el ID del libro a borrar: ")
+        peticion = f"DELETE FROM `datos_del _libro` WHERE identificador={identificador};"
+        cursor = conexion.cursor()
+        cursor.execute(peticion)
+        conexion.commit()
+        print("Libro borrado exitosamente.")
+        
+    elif opcion == "5":
+        print("Has elegido salir del programa.")
+        conexion.close()
+        break
 
-
+    else:
+        print("Opción no válida, por favor elige una opción del 1 al 5.")

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+    <title>La web de Yonatan Mora.</title>
+    <meta charset="utf-8">
+
+    <style>
+        @font-face{
+            font-family:'Cream-Cake';
+            src:url(fuentes/Ananda\ Personal\ Use.ttf);
+        }
+        header{
+            font-family:'Cream-Cake';
+            font-weight:lighter;
+            background-color: rgb(137, 146, 146);
+            border-radius: 30px;
+        }
+        h1,h2{
+            color: black;
+        }
+
+        body{
+            color:#efeded;
+            background-color: rgb(104, 117, 132);
+        }
+        header,main,footer{
+            width: 800px;
+            margin: auto;
+        }
+        #inicio img{
+            width: 300px;
+            border-radius: 20px;
+        }
+        header,h3{
+            text-align: center;
+        }
+        p{
+            text-align: justify;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        nav ul{
+            list-style-type: none;
+            padding: 10px;
+            
+        }
+        nav ul li{
+            display: inline-block;
+            margin: 20px; 
+            
+            
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: inherit;
+            font-size: larger;
+            
+        }
+        article{
+            display: inline-block;
+            width: 33%;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        article img{
+            width: 100%;
+        }
+        .inicioimagen{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50px;
+            
+        }
+        .quiensoy{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 20px;
+            width: 250px;
+            
+        }
+        .flexbox2columnas
+            {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            align-content: stretch;
+            column-gap: 25px;
+                                    
+        }
+        table{
+            width: 100%;
+        }
+        thead{
+            background: indigo;
+            color: rgb(255, 255, 255);
+
+        }
+        form{
+            width: 31%;
+            
+        }
+        iframe{
+            width: 60%;
+            border-radius: 20px;
+        }
+        footer ul{
+            list-style-type: none;
+            padding: 10px;
+        }
+        footer ul li{
+            padding: 0px;
+            margin: 0px;
+        }
+        footer ul li a{
+            text-decoration: none;
+            color: inherit;
+            font-size: x-large;
+        }
+        img iframe{
+            border-radius: 20px;
+        }
+        fieldset{
+            border-radius: 20px;
+        }
+        legend{
+            color: rgb(255, 222, 8);
+        }
+        .quien{
+            color: indigo;
+            font-family: sans-serif;
+            font-size:x-large;
+        }
+        .ini{
+            color: indigo;
+            font-family: sans-serif;
+            font-size:x-large;
+        }
+        .uni{
+            color: indigo;
+            font-family: sans-serif;
+            font-size:x-large;
+        }
+        .cont{
+            color: indigo;
+            font-family: sans-serif;
+            font-size:x-large;
+        }
+        .bl{
+            color: indigo;
+            font-family: sans-serif;
+            font-size:x-large;
+        }
+        textarea{
+            height: 300px;
+        }
+        footer{
+            background-color: rgb(137, 146, 146);
+            border-radius: 30px;
+        }
+        #ojo{
+            height: 325px;
+        }
+        #logoume{
+            height: 325px;
+        }
+       
+
+      
+
+    </style>
+
+    </head> 
+   <body>
+    <header>
+        <h1>Bienvenidos a la web de Yonatan Mora.</h1>
+        <h2>Programador y estudiante de informática</h2>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#Quien_soy">Quien soy</a></li>
+            <li><a href="#Unidades_donde_he_estado">Unidades donde he estado</a></li>
+            <li><a href="#Blog">Blog</a></li>
+            <li><a href="#formulario_de_contacto">Formulario de contacto</a></li>
+        </ul>
+    </nav>    
+    <hr>
+        
+    </header>
+    <main>
+        
+        <section id="inicio">
+            <h3 class="ini">Inicio</h3>
+            <img src="galeria-de-yonatan/blanco-negro-desenfoque.jpg" alt="policia" width="280" class="inicioimagen">
+            <p>Yonatan Mora Ruiz es un programador apasionado y estudiante de informática, dedicado a desentrañar los misterios de la tecnología y aplicarlos en la vida real. Su trayectoria académica y profesional es reflejo de su constante búsqueda de conocimiento y superación personal.</p>
+            <p>Yonatan se encuentra en constante formación, buscando siempre nuevas oportunidades para ampliar sus conocimientos. Su educación formal en informática le ha proporcionado una base sólida en programación, desarrollo de software y gestión de bases de datos. Ha complementado su formación con cursos y certificaciones en tecnologías emergentes, manteniéndose al día con las últimas tendencias del sector.</p>
+            <hr>
+        </section>
+
+        <section id="Quiensoy">
+            <h3 class="quien">Quien soy</h3>
+            <div class="flexbox2columnas">
+            <img src="galeria-de-yonatan/pmyonatan.jpg" alt="moto"  class="quiensoy">
+            <p> UME es una unidad de las Fuerzas Armadas de España creada para intervenir en situaciones de grave riesgo, catástrofes, calamidades u otras necesidades públicas. Los miembros de la UME, como Yonatan, son conocidos por su dedicación, valentía y capacidad para trabajar bajo presión en situaciones críticas. Su trabajo implica estar preparados para actuar rápidamente en cualquier parte del territorio nacional y, en ocasiones, en el extranjero.
+                Trabajar en la UME requiere una gran capacidad de adaptación, habilidades de trabajo en equipo y un fuerte compromiso con la seguridad y el bienestar de los ciudadanos. Los miembros de la UME reciben formación especializada y están equipados con tecnología avanzada para enfrentar diversas emergencias, desde incendios forestales hasta inundaciones y terremotos.</p><hr>
+            </div>
+        </section>
+        <section id="Unidades_donde_he_estado">
+            <h3 class="uni">Unidades de destino</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Unidad de destino</th>
+                        <th>Tiempo de destino</th>
+                        <th>Lugar de destino</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Grupo de seguridad del Cuartel General del Ejercito del Aire</td>
+                        <td>desde el año 2007 hasta el año 2014</td>
+                        <td>Madrid</td>
+                    </tr>
+                    <tr>
+                        <td>ACTUALMENTE destinado en la UNIDAD MILITAR DE EMERGENCIAS UME BIEM III</td>
+                        <td>desde el año 2015 hasta LA FECHA ACTUAL</td>
+                        <td>Valencia</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+        <section id="Blog">
+            <h3 class="bl">Blog</h3>
+
+            <article>
+              <img src="galeria-de-yonatan/escudo.png" alt="blanco_perfil" id="logoume">
+              <h4>esto es el PRIMER titulo del articulo</h4>
+              <time>2024-10-02</time>
+              <p>contenido basico del articulo que voy a publicar</p>  
+            </article>
+
+            <article>
+                <img src="galeria-de-yonatan/motoyonatan.jpg" alt="blanco_perfil" width="100">
+                <h4>esto es el SEGUNDO titulo del articulo</h4>
+                <time>2024-10-02</time>
+                <p>contenido basico del articulo que voy a publicar</p>  
+              </article>
+
+              <article>
+              <img src="galeria-de-yonatan/ojo.jpg" alt="blanco_perfil"  id="ojo">
+                <h4>esto es el TERCER titulo del articulo</h4>
+                <time>2024-10-02</time>
+                <p>contenido basico del articulo que voy a publicar</p>  
+              </article>
+              
+        </section>
+        
+        <section id="Formulario_de_contacto">
+            <h3 class="cont">Formulario de contacto</h3>
+            <div class="flexbox2columnas">
+            <form>
+            <fieldset>
+               <legend>ENVIA TU MENSAJE:</legend>     
+               <label for="nombre">Introduce tu nombre</label> 
+               <input type="text" name="nombre" id="nombre" placeholder="nombre">
+
+               <label for="email">Introduce tu email</label>
+               <input type="email" name="email" id="email" placeholder="email">
+
+               <label for="mensaje">Introduce tu mensaje</label> 
+               <textarea id="mensaje" name="mensaje" placeholder="mensaje"></textarea><br>
+               <input type="submit">
+            </fieldset>
+            </form>
+            
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31062.049310508017!2d-0.4724712703632081!3d39.42988142733108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1727893147928!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+            
+    </main>
+    <footer>
+        <div class="flexbox2columnas">
+            <ul>
+                <li><a href="politica_html">politica de privacidad</a></li>
+                <li><a href="terminos_html">terminos de uso</a></li>
+                <li><a href="datos_html">proteccion de datos</a></li>
+                <li><a href="cokies_html">politica de cokies</a></li>
+             </ul>
+             <ul>
+                <li><a href="https://www.facebook.com/?locale=es_ES">facebook</a></li>
+                <li><a href="https://www.instagram.com/l">instagram</a></li>
+                <li><a href="https://www.youtube.com/">youtube</a></li>
+                <li><a href="https://github.com/">github</a></li>
+
+             </ul>
+        </div>     
+    </footer>
+   </body>
+</html> 
