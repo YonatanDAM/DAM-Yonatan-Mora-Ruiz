@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Yonatan</title>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            background: url(fondo-hombre.jpg) no-repeat center center fixed;
+            background-size: cover;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        #contenedor {
+            
+            width: 400px;
+            padding: 60px 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: white;
+            border-radius: 8px;
+        }
+        input[type="text"], input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 20px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: rgba(217, 224, 224, 0.712);
+            color: white;
+            border-color: black;
+        }
+        input[type="checkbox"] {
+            margin: 10px 0;
+        }
+        button {
+            width: 110px;
+            padding: 10px;
+            background-color: #17dc35;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 20px;
+
+        }
+        button:hover {
+            background-color: #1977db;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        h1{
+            font-family:Calibri Light;
+            font-size: 60px;
+            font-weight: lighter;
+            text-align: left;
+        }
+        h3{
+            font-family:Calibri Light;
+            font-weight: lighter;
+            text-align: right;
+            color: black;
+        }
+        input[type="text"]{
+            background-image: url(iono\ usuario.jpg);
+            background-size: 55px;
+            background-repeat: no-repeat;
+      
+        }
+        input[type="password"]{
+            background-image: url(candado.jpg);
+            background-size: 55px;
+            background-repeat: no-repeat;
+
+        }
+        a,h3{
+            color: #000000;
+        }
+        #contenedor2{
+            margin-right: 270px;
+            color: black;
+        }
+        input::placeholder{
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            margin-left: 140px;
+        }
+        
+      
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <h1>Login</h1>
+        <h3>Create an account</h3>
+        <form>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <div id="contenedor2">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Remember me</label>
+            </div>
+            <div id="contenedor3">
+            <a href="crear.php">Need help?</a>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
